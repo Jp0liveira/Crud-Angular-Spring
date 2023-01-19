@@ -1,5 +1,7 @@
 package com.joaopaulo.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,6 +17,7 @@ public class Course {
 
   @Id // chave primaria
   @GeneratedValue( strategy = GenerationType.AUTO )
+  @JsonProperty( "_id") // transforma o id em _id para funcionar no front-end ( angular )
   private Long id;
 
   @Column( length = 200, nullable = false )

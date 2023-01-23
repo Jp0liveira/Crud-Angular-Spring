@@ -23,6 +23,6 @@ public class CoursesController {
   public List<Course>  list() {
     return courseRepository.findAll( );
 
-  }
+  } 
 
 }

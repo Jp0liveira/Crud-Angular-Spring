@@ -10,7 +10,7 @@ import { Course } from '../../model/course';
 export class CoursesListComponent implements OnInit {
   @Input() courses: Course[] = [];
   @Output() add = new EventEmitter(false); // emite um evento
-
+  @Output() edit = new EventEmitter(false);
   readonly displayedColumns = ['name', 'category', 'actions'];
 
   constructor() {}
@@ -18,6 +18,9 @@ export class CoursesListComponent implements OnInit {
   onAdd() {
     this.add.emit(true);
     //console.log( 'onAdd');
+  }
+  onEdit( course: Course ){
+    this.edit.emit( course );
   }
 
   ngOnInit(): void {}
